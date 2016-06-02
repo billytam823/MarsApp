@@ -28,7 +28,12 @@ const barrels: string[] = [
 
   // App specific barrels.
   'app',
-  'app/shared',
+  'app/shared/models',
+  'app/shared/services',
+  'app/+home',
+  'app/+register',
+  'app/+encounters',
+  'app/+report'
   /** @cli-barrel */
 ];
 
@@ -52,3 +57,4 @@ System.config({
 
 // Apply the user's configuration.
 System.config({ map, packages });
+   

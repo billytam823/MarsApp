@@ -1,0 +1,19 @@
+<div class="register">
+	<form #registerForm="ngForm" (ngSubmit)="onSubmit($event)">	
+		<label for="name">Name</label>
+		<input ngControl="name" [(ngModel)]="colonist.name" type="text" id="name" required>
+		
+		<label>Age</label>
+		<input ngControl="age" [(ngModel)]="colonist.age" type="number" id="age" required>
+		
+		<label for="occupation">Select Occupation</label>
+		<select ngControl="job" [(ngModel)]="colonist.job_id" class="form-control" required>
+			<option [value]="NO_OCCUPATION_SELECTED">Select an Occupation</option>
+			<option *ngFor="let job of occupations" [value]="job.id">{{job.name}}</option>
+		</select>
+		
+		<button type="submit" [disabled]=" noOccupation || !registerForm.form.valid">Submit</button>
+	</form>
+
+	<p><a [routerLink]="['/encounters']">Encounters</a></p>
+</div>
