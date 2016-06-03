@@ -1,6 +1,9 @@
-<h1>Encounters</h1>
-<p>See an Alien? Report it</p>
-<div class="alien-encounters">
+<div class="encounters">
+	<ul class="encounter-list">
+		<li *ngFor="let event of encounter">
+			<p>{{event.date}} - {{event.atype}}</p>
+			<p>{{event.action}}</p>
+		</li>
+	</ul>
+	<p><a [routerLink]="['/report']">Report</a></p>
 </div>
-
-<p><a [routerLink]="['/report']">Report</a></p>
