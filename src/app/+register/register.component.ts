@@ -4,7 +4,7 @@ import { NgForm } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { ColonistService, OccupationService } from '../shared/services';
-import { Colonist, IOccupation} from '../shared/models';
+import { Colonist, IColonist, IOccupation} from '../shared/models';
 
 @Component({
   moduleId: module.id,
@@ -18,8 +18,11 @@ import { Colonist, IOccupation} from '../shared/models';
 export class RegisterComponent implements OnInit {
 
   public NO_OCCUPATION_SELECTED: string;
-	public occupations: IOccupation[];
   public colonist: Colonist;
+
+	//variable for pulling lists
+  public occupations: IOccupation[];
+  public colonistList: IColonist[];
 
   constructor(
   	private router: Router,
@@ -39,7 +42,12 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(event): void{
-      this.colonistService.createColonist(this.colonist).then( colonist => this.router.navigate(['/encounters']))
+      this.colonistService.createColonist(this.colonist).then((colonist: IColonist) => 
+        { 
+          localStorage.setItem("colonistID", colonist.id);
+          this.router.navigate(['/encounters']); 
+        }
+      );
   }
 
 }

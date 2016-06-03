@@ -19,6 +19,13 @@ export interface IEncounter{
 	action:string
 }
 
+export interface IColonist{
+	name:string,
+	age: number,
+	id: string
+}
+
+
 export class Encounter{
 	constructor(
 		public atype: string,

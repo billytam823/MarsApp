@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import {Colonist} from '../models';
+import {Colonist,IColonist} from '../models';
 
 //Service Pattern
 @Injectable()
@@ -13,7 +13,7 @@ export class ColonistService {
 
   constructor(private http: Http) {}
 
-  createColonist(colonist: Colonist): Promise<Colonist[]>{
+  createColonist(colonist: Colonist): Promise<IColonist>{
     
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let body = JSON.stringify({ colonist }) // Same as colonist : colonist
