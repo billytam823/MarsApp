@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
     this.NO_OCCUPATION_SELECTED = '(none)';
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.colonist = new Colonist(null,null, this.NO_OCCUPATION_SELECTED); //creating a new colonist with default value in field
 	  this.occupationService.getjobs().then((jobs) => this.occupations = jobs); //pulling the list of jobs into dropdown menu
   }

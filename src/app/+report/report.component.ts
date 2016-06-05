@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/common';
 import { Router } from '@angular/router';
 
-import { AlienService, EncounterService, ColonistService } from '../shared/services';
-import { IAliens, Encounter, IColonist} from '../shared/models';
+import { AlienService, EncounterService } from '../shared/services';
+import { IAliens, Encounter} from '../shared/models';
 
 @Component({
   moduleId: module.id,
   selector: 'app-report',
   templateUrl: 'report.component.html',
   styleUrls: ['report.component.css'],
-  providers: [AlienService, EncounterService, ColonistService]
+  providers: [AlienService, EncounterService]
 })
 
 export class ReportComponent implements OnInit {
@@ -18,13 +18,11 @@ export class ReportComponent implements OnInit {
 	public aliens: IAliens[];
 	public encounter: Encounter;
 	public NO_ALIEN_SELECTED: string;
-	public colonist: IColonist[];
 
   constructor(
   	private router: Router,
 	private alienService: AlienService,
-	private encounterService: EncounterService,
-	private colonistService: ColonistService
+	private encounterService: EncounterService
 
   ) {
 	  this.NO_ALIEN_SELECTED = '(none)';

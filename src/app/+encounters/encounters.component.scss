@@ -1,5 +1,19 @@
+.encounters{
+	background:
+		linear-gradient(210deg, rgba(255,255,255,0.1), rgba(0,0,0,0.7)),
+		url('app/images/mars-encounter.jpg');
+	background-size:cover;
+	background-position:center;	
+	height:95vh;
+	padding-top:5vh;
+	text-align:center;
+}
+
 .encounter-list{
-	max-height:60vh;
+	background-color:rgba(0,0,0,0.8);
+	max-height:50vh;
+	margin:7vh 0;
 	overflow:scroll;
 	overflow-x:hidden;
+	color:#fff;
 }

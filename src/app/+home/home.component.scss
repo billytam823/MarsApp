@@ -1,7 +1,7 @@
 .home{
-	height:85vh;
+	height:95vh;
 	text-align:center;
-	padding-top:15vh;
+	padding-top:5vh;
 	color:#fff;
 	background: linear-gradient(210deg, rgba(255,255,255,0.1), rgba(0,0,0,0.7));
 	background-size: 400% 400%;
@@ -30,6 +30,7 @@
 .home-bg{
 	background:url('app/images/mars-colony.jpg');
 	background-size:cover;
+	background-position:center;
 	height:100vh;
 }
 
@@ -66,10 +67,4 @@
 		100% {box-shadow: 0 0 0 1.75rem rgba(255,255,255,0),0 0 0 3.75rem rgba(255,255,255,0),0 0 0 6rem rgba(255,255,255,0);}
 	}
 
-}
-
-h1{
-	color:#fff;	
-	font-size:3em;
-	margin-bottom:5px;
 }

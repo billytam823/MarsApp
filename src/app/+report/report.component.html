@@ -2,12 +2,12 @@
 	<form #reportForm="ngForm" (ngSubmit)="onSubmit($event)">
 	<label for="alien">Alien Type</label>
 	<select ngControl="atype" [(ngModel)]="encounter.atype" required>
-		<option for="aliens">Type of Alien</option>
+		<option [value]="NO_ALIEN_SELECTED" for="aliens">Type of Alien</option>
 		<option *ngFor="let alien of aliens" [value]="alien.type">{{alien.type}}</option>
 	</select>
 
 	<input ngControl="description" [(ngModel)]="encounter.action" type="textarea" placeholder="Action Taken">
 	
-	<button type="submit" [disabled]="!reportForm.form.valid" >Submit</button>
+	<button type="submit" [disabled]=" noAlien || !reportForm.form.valid" >Submit</button>
 	</form>
 </div>

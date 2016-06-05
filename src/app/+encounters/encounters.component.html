@@ -1,9 +1,11 @@
 <div class="encounters">
+	<h1>Alien Sightings!</h1>
+	<p>They are unpredictable and random!</p>
 	<ul class="encounter-list">
 		<li *ngFor="let event of encounter">
 			<p>{{event.date}} - {{event.atype}}</p>
 			<p>{{event.action}}</p>
 		</li>
 	</ul>
-	<p><a [routerLink]="['/report']">Report</a></p>
+	<p><a class="link" [routerLink]="['/report']">Report</a></p>
 </div>

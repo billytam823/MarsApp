@@ -1,19 +1,26 @@
 <div class="register">
-	<form #registerForm="ngForm" (ngSubmit)="onSubmit($event)">	
-		<label for="name">Name</label>
-		<input ngControl="name" [(ngModel)]="colonist.name" type="text" id="name" required>
 		
-		<label>Age</label>
-		<input ngControl="age" [(ngModel)]="colonist.age" type="number" id="age" required>
+		<h1>Colonist Register</h1>
+		<p>Please fill in the form while we scan your face</p>
+		<form #registerForm="ngForm" (ngSubmit)="onSubmit($event)">	
+
+		<input ngControl="name" [(ngModel)]="colonist.name" type="text" id="name" placeholder="Name" required>
 		
-		<label for="occupation">Select Occupation</label>
+		<br />
+
+		<input ngControl="age" [(ngModel)]="colonist.age" type="number" id="age" placeholder="Age" required>
+		
+		<br />
+
 		<select ngControl="job" [(ngModel)]="colonist.job_id" class="form-control" required>
-			<option [value]="NO_OCCUPATION_SELECTED">Select an Occupation</option>
+			<option [value]="NO_OCCUPATION_SELECTED">Select Occupation</option>
 			<option *ngFor="let job of occupations" [value]="job.id">{{job.name}}</option>
 		</select>
 		
-		<button type="submit" [disabled]=" noOccupation || !registerForm.form.valid">Submit</button>
+		<br />
+
+		<button class="link" type="submit" [disabled]=" noOccupation || !registerForm.form.valid">Submit</button>
 	</form>
 
-	<p><a [routerLink]="['/encounters']">Encounters</a></p>
+	<a [routerLink]="['/encounters']">Encounters</a>
 </div>
