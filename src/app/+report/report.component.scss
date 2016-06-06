@@ -1,4 +1,9 @@
 .report{
-	background-color:#000;
-	height:100vh;
+	background:
+		linear-gradient(210deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+	    url('app/images/mars-report.jpg');
+	background-size:cover;
+	height:95vh;
+	padding-top:5vh;
+	text-align:center;
 }

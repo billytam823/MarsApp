@@ -35,6 +35,7 @@ input,select{
 	border:none;
 	outline:none;
 	width:90%;
+	padding:0 1%;
 	border-bottom: 2px solid #0000ff;
 	font-size:1.4em;
 	margin-bottom:30px;
@@ -45,16 +46,37 @@ input,select{
 	}
 }
 
-::-webkit-input-placeholder{
-	color:#999;
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 select option{
 	color:#888;
 }
 
+textarea{
+	height:20vh;
+	background-color:rgba(255,255,255,0.2);
+	outline:none;
+	border:none;
+	width:88%;
+	padding:0 1%;
+	font-size:1.3em;
+	color:#fff;
+}
+
 button{
 	margin-top:20vh;
+
+	&:disabled{
+		color:#888;
+	}
 }
 
 .link{
@@ -66,8 +88,9 @@ button{
 	padding:0;
 	background:transparent;
 
-	&:hover{
+	&:hover:enabled{
 		color:#fff;
 		text-shadow: 0px 0px 8px #fff;
+		cursor:pointer;
 	}
 }
