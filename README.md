@@ -1,4 +1,4 @@
-# QuizApp 
+# MarsApp 
 
 An app built with Angular2 to work with a database.
 
